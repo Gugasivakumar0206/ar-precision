@@ -4,14 +4,14 @@ services:
     container_name: manufacturing-postgres
     restart: unless-stopped
     environment:
-      POSTGRES_DB: manufacterp
+      POSTGRES_DB: ar_precision_erp
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres123
+      POSTGRES_PASSWORD: 12345
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ./backend/sql/init_app.sql:/docker-entrypoint-initdb.d/init_app.sql:ro
     ports:
-      - "5432:5432"
+      - "5435:5432"
 
   backend:
     build:
